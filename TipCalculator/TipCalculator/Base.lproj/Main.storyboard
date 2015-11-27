@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="x0V-IZ-hfI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tip Calculator-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Total (Post-Tax):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRr-09-DFA">
+                                <rect key="frame" x="33" y="81" width="152" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentage (0%): " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dar-hn-U90">
+                                <rect key="frame" x="33" y="120" width="136" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HHt-gy-SOy">
+                                <rect key="frame" x="192" y="77" width="392" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="urk-Eq-LSq">
+                                <rect key="frame" x="190" y="116" width="396" height="31"/>
+                                <connections>
+                                    <action selector="taxPercentageChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="3eL-fI-ORC"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dY8-Dt-UVM">
+                                <rect key="frame" x="259" y="154" width="64" height="30"/>
+                                <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="calculateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iyo-rV-X0w"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAx-LB-AJ4">
+                                <rect key="frame" x="16" y="192" width="568" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="HHt-gy-SOy" firstAttribute="leading" secondItem="ZRr-09-DFA" secondAttribute="trailing" constant="7" id="2Sy-w7-l2G"/>
+                            <constraint firstItem="VAx-LB-AJ4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="5f7-Or-Njg"/>
+                            <constraint firstItem="ZRr-09-DFA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="13" id="6cs-MT-DCf"/>
+                            <constraint firstItem="dY8-Dt-UVM" firstAttribute="top" secondItem="urk-Eq-LSq" secondAttribute="bottom" constant="8" symbolic="YES" id="73x-qA-Ih3"/>
+                            <constraint firstItem="dar-hn-U90" firstAttribute="leading" secondItem="ZRr-09-DFA" secondAttribute="leading" id="CAI-ZX-vv9"/>
+                            <constraint firstItem="urk-Eq-LSq" firstAttribute="centerY" secondItem="dar-hn-U90" secondAttribute="centerY" id="CXM-GW-wJ0"/>
+                            <constraint firstItem="ZRr-09-DFA" firstAttribute="centerY" secondItem="HHt-gy-SOy" secondAttribute="centerY" id="SWz-vO-Ri8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VAx-LB-AJ4" secondAttribute="bottom" constant="8" symbolic="YES" id="Tex-du-ZkI"/>
+                            <constraint firstItem="VAx-LB-AJ4" firstAttribute="top" secondItem="dY8-Dt-UVM" secondAttribute="bottom" constant="8" symbolic="YES" id="Twa-Qj-3Yo"/>
+                            <constraint firstItem="HHt-gy-SOy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="U15-Bc-UXD"/>
+                            <constraint firstItem="VAx-LB-AJ4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uht-HP-fvB"/>
+                            <constraint firstItem="HHt-gy-SOy" firstAttribute="trailing" secondItem="urk-Eq-LSq" secondAttribute="trailing" id="ZF0-xo-x9z"/>
+                            <constraint firstItem="VAx-LB-AJ4" firstAttribute="trailing" secondItem="urk-Eq-LSq" secondAttribute="trailing" id="cF3-DZ-XrZ"/>
+                            <constraint firstItem="HHt-gy-SOy" firstAttribute="leading" secondItem="urk-Eq-LSq" secondAttribute="leading" id="jIG-Hf-tBO"/>
+                            <constraint firstItem="dY8-Dt-UVM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="259" id="prk-ju-FhN"/>
+                            <constraint firstItem="urk-Eq-LSq" firstAttribute="top" secondItem="HHt-gy-SOy" secondAttribute="bottom" constant="9" id="zLh-aN-Y9u"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="kb1-5K-isv" appends="YES" id="2Nq-z2-bXv"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="g9g-oD-Ya3" userLabel="Tip Calculator"/>
+                    <connections>
+                        <outlet property="resultsTextView" destination="VAx-LB-AJ4" id="C8G-Ra-T45"/>
+                        <outlet property="taxPctLabel" destination="dar-hn-U90" id="aJv-hL-Imj"/>
+                        <outlet property="taxPctSlider" destination="urk-Eq-LSq" id="Fza-ZY-QFs"/>
+                        <outlet property="totalTextField" destination="HHt-gy-SOy" id="ufV-KX-bTi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kb1-5K-isv">
+                    <connections>
+                        <action selector="viewTapped:" destination="BYZ-38-t0r" id="6tq-Hu-dnW"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1171" y="441"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lod-Mm-fg9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x0V-IZ-hfI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zAv-Im-lGi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oA0-GZ-acr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CIQ-XU-nWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="329" y="1101"/>
+        </scene>
+    </scenes>
+</document>
